@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: ""
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,56 +9,97 @@ redirect_from:
 
 {% include base_path %}
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+<style>
+h2 {
+  margin-top: 2em;
+}
+.job-section {
+  background: #f9f9f9;
+  padding: 1.5em;
+  border-left: 4px solid #2a7ae2;
+  border-radius: 6px;
+  margin-bottom: 2em;
+}
+ul {
+  padding-left: 1.2em;
+}
+</style>
+## 💰 招聘岗位
+### 🎓 博士后（常年有效）
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+<div class="job-section">
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+### 岗位要求：
+- 年龄 ≤ 32 岁（特别优秀者可适当放宽），热爱科研，具备科研思路和责任感。
+- 已获或即将获得生物信息学、计算机、免疫学等相关博士学位，有相关研究经验者优先。
+- 以第一作者发表过 SCI 论文（不含综述、评论）。
+- 英语写作与阅读能力优秀，能独立开展科研工作。
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+</div>
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+---
+
+### 🧪 科研助理（1-2名）
+
+<div class="job-section">
+
+### 岗位要求：
+- 年龄不限，能长期稳定工作。
+- 已获或即将获得基础医学/计算生物学相关专业的本科或硕士学历。
+- 有单细胞建库、网页开发或服务器管理经验者优先。
+- 具备责任感、沟通能力、团队合作精神，遵守学术和组织规范。
+
+</div>
+
+---
+
+### 📚 博士、硕士研究生
+
+<div class="job-section">
+
+欢迎加入我们的“生物信息与复杂疾病研究团队”，致力于结合计算方法与实验手段，研究基础及临床的重大科学问题。背景不限，欢迎有志者！
+
+</div>
+
+---
+
+## 💰 薪酬待遇
+
+### 博士后
+
+<div class="job-section">
+
+- 具有竞争力的基础年薪 + 五险一金  
+- 国家/省级人才项目支持：提供年薪/项目经费，奖励上不封顶  
+- 科研启动经费支持  
+- 鼓励申报各级科研项目与人才计划  
+- 医院员工待遇（体检、子女入托入学等）  
+- 优秀者可晋升至科研岗位  
+
+</div>
+
+### 科研助理
+
+<div class="job-section">
+
+- 薪资待遇面议  
+- 享受课题组科研激励（如文章、项目奖励）  
+- 五险一金 + 工会福利 + 体检等  
+
+</div>
+
+---
+
+## 📬 应聘方式
+
+请将以下材料打包为 PDF，发送至邮箱：**hongyiz9@uestc.edu.cn**  
+邮件主题格式：“姓名 + 应聘岗位/博士/硕士 + 单位”
+
+- 个人简历（教育/科研经历、发表文章、获奖、科研技能等）
+- 学历与学位证书材料
+
+---
+
+## 🌍 访问学者计划
+
+我们欢迎在**生物信息学、统计学、免疫学**等领域有研究经验的访问学者与我们联系，在实验室进行临时合作研究。
