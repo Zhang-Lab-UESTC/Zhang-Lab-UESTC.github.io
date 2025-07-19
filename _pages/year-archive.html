@@ -1,19 +1,55 @@
 ---
 layout: archive
 permalink: /year-archive/
-title: "Blog posts"
+title: "实验室精彩瞬间"
 author_profile: true
-redirect_from:
-  - /wordpress/blog-posts/
 ---
 
-{% include base_path %}
-{% capture written_year %}'None'{% endcapture %}
-{% for post in site.posts %}
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != written_year %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
-    {% capture written_year %}{{ year }}{% endcapture %}
-  {% endif %}
-  {% include archive-single.html %}
-{% endfor %}
+<style>
+    .masonry-gallery {
+        column-count: 3;
+        column-gap: 15px;
+        padding: 20px;
+    }
+
+    .masonry-photo {
+        margin-bottom: 15px;
+        break-inside: avoid;
+        transition: transform 0.3s;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .masonry-photo:hover {
+        transform: scale(1.05);
+    }
+
+    .masonry-photo img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+    }
+
+    @media (max-width: 992px) {
+        .masonry-gallery {
+            column-count: 2;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .masonry-gallery {
+            column-count: 1;
+        }
+    }
+</style>
+
+<div class="masonry-gallery">
+    <div class="masonry-photo"><img src="/images/ZhangLab-Photo/于雪新.png" loading="lazy"></div>
+    <div class="masonry-photo"><img src="/images/ZhangLab-Photo/张洪溢.jpg" loading="lazy"></div>
+    <div class="masonry-photo"><img src="/images/ZhangLab-Photo/陈泓羽.jpg" loading="lazy"></div>
+    <div class="masonry-photo"><img src="/images/ZhangLab-Photo/彭癸森.jpg" loading="lazy"></div>
+    <div class="masonry-photo"><img src="/images/ZhangLab-Photo/宋杨.jpg" loading="lazy"></div>
+    <div class="masonry-photo"><img src="/images/ZhangLab-Photo/魏甜甜.jpg" loading="lazy"></div>
+    <div class="masonry-photo"><img src="/images/ZhangLab-Photo/许远东.jpg" loading="lazy"></div>
+</div>
