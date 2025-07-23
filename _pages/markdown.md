@@ -11,7 +11,7 @@ redirect_from:
 
 ## 联系方式
 负责人：张洪溢，邮箱：hongyiz9@uestc.edu.cn  
-负责人：于雪新，邮箱：hongyiz9@uestc.edu.cn
+负责人：于雪新，邮箱：yuxuexin@uestc.edu.cn
 
 ## 联系地址
 欢迎您来参观！
