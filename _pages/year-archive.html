@@ -13,16 +13,27 @@ author_profile: true
     .photo-row {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        gap: 2%; /* 用gap替代margin控制间距 */
         margin-bottom: 20px;
     }
     
     .photo-item {
-        width: 32%;
+        /* 基础宽度计算：(100% - 2 * 2%)/3 = 32% */
+        width: calc(96%/3); /* 更精确的计算方式 */
         margin-bottom: 15px;
         transition: transform 0.3s;
         border-radius: 8px;
         overflow: hidden;
+    }
+    
+    /* 当只有2个item时的特殊处理 */
+    .photo-row:has(.photo-item:nth-last-child(2)) .photo-item {
+        width: 49%; /* (100% - 2%)/2 */
+    }
+    
+    /* 当只有1个item时的特殊处理 */
+    .photo-row:has(.photo-item:only-child) .photo-item {
+        width: 100%;
     }
     
     .photo-item:hover {
@@ -38,12 +49,22 @@ author_profile: true
     
     @media (max-width: 992px) {
         .photo-item {
+            width: 48%; /* 平板端每行2张 */
+        }
+        /* 覆盖特殊情况的处理 */
+        .photo-row:has(.photo-item:nth-last-child(2)) .photo-item,
+        .photo-row:has(.photo-item:only-child) .photo-item {
             width: 48%;
         }
     }
     
     @media (max-width: 600px) {
         .photo-item {
+            width: 100%; /* 手机端每行1张 */
+        }
+        /* 覆盖特殊情况的处理 */
+        .photo-row:has(.photo-item:nth-last-child(2)) .photo-item,
+        .photo-row:has(.photo-item:only-child) .photo-item {
             width: 100%;
         }
     }
