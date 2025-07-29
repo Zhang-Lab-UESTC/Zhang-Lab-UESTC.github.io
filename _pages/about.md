@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "电子科技大学医学院｜生物信息与肿瘤免疫课题组"
+title: "电子科技大学医学院｜生物信息与复杂疾病研究团队"
 author_profile: true
 redirect_from: 
   - /about/
