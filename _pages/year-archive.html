@@ -17,41 +17,15 @@ author_profile: true
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
             font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             padding: 20px;
             max-width: 1400px;
             margin: 0 auto;
         }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px 0;
-            background: linear-gradient(135deg, #1a6bc4 0%, #0d4a8a 100%);
-            border-radius: 12px;
-            color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        
-        .subtitle {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-        
         .section-title {
             font-size: 2rem;
             font-weight: 700;
@@ -61,16 +35,13 @@ author_profile: true
             color: #0d4a8a;
             position: relative;
         }
-        
         .section-title i {
             margin-right: 12px;
             color: #1a6bc4;
         }
-        
         .photo-section {
             margin-bottom: 40px;
         }
-        
         .photo-caption-top {
             text-align: center;
             margin: 0 auto 25px;
@@ -84,7 +55,6 @@ author_profile: true
             background-color: #f9f9f9;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        
         .photo-row {
             display: flex;
             flex-wrap: wrap;
@@ -92,9 +62,8 @@ author_profile: true
             margin-bottom: 30px;
             justify-content: center;
         }
-        
         .photo-item {
-            flex: 1 1 calc(33.333% - 20px);
+            flex: 0 0 calc(33.333% - 20px); /* 固定宽度，每行三张 */
             min-width: 280px;
             margin-bottom: 15px;
             transition: all 0.3s ease;
@@ -104,41 +73,21 @@ author_profile: true
             background: white;
             position: relative;
         }
-        
         .photo-item:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
-        
         .photo-item img {
             width: 100%;
-            height: 280px;
-            object-fit: cover;
+            height: auto; /* 保持原始宽高比 */
             display: block;
             transition: transform 0.5s ease;
+            object-fit: contain; /* 不截取图片 */
+            background-color: white; /* 纯白背景 */
         }
-        
         .photo-item:hover img {
             transform: scale(1.05);
         }
-        
-        .photo-description {
-            padding: 15px;
-            background: white;
-        }
-        
-        .photo-description h4 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: #1a6bc4;
-        }
-        
-        .photo-description p {
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.5;
-        }
-        
         footer {
             text-align: center;
             margin-top: 60px;
@@ -147,45 +96,21 @@ author_profile: true
             font-size: 0.9rem;
             border-top: 1px solid #e0e0e0;
         }
-        
         @media (max-width: 992px) {
             .photo-item {
-                flex: 1 1 calc(50% - 20px);
+                flex: 0 0 calc(50% - 20px); /* 平板端每行两张 */
             }
         }
-        
         @media (max-width: 600px) {
             .photo-item {
-                flex: 1 1 100%;
+                flex: 0 0 100%; /* 手机端每行一张 */
             }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
             .section-title {
                 font-size: 1.7rem;
             }
         }
-        
-        .empty-section {
-            text-align: center;
-            padding: 40px 0;
-            color: #888;
-            font-style: italic;
-            border: 2px dashed #e0e0e0;
-            border-radius: 10px;
-            margin: 30px 0;
-        }
-        
-        .empty-section i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            color: #ccc;
-        }
     </style>
 </head>
-
 
 
 
@@ -211,7 +136,6 @@ author_profile: true
 
 
 
-
 <!---------------------------------- 实验室日常 ---------------------------------->
 <h3 class="section-title">实验室日常</h3>
 <div class="photo-section">
@@ -224,7 +148,6 @@ author_profile: true
     
     <!----继续添加---->
 </div>
-
 
 
 
