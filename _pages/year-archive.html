@@ -9,14 +9,12 @@ author_profile: true
     .photo-section {
         margin-bottom: 30px;
     }
-    
     .photo-row {
         display: flex;
         flex-wrap: wrap;
         gap: 2%; /* 用gap替代margin控制间距 */
         margin-bottom: 20px;
     }
-    
     .photo-item {
         /* 基础宽度计算：(100% - 2 * 2%)/3 = 32% */
         width: calc(96%/3); /* 更精确的计算方式 */
@@ -25,28 +23,23 @@ author_profile: true
         border-radius: 8px;
         overflow: hidden;
     }
-    
     /* 当只有2个item时的特殊处理 */
     .photo-row:has(.photo-item:nth-last-child(2)) .photo-item {
         width: 49%; /* (100% - 2%)/2 */
     }
-    
     /* 当只有1个item时的特殊处理 */
     .photo-row:has(.photo-item:only-child) .photo-item {
         width: 100%;
     }
-    
     .photo-item:hover {
         transform: scale(1.05);
     }
-    
     .photo-item img {
         width: 100%;
         height: auto;
         display: block;
         border-radius: 8px;
     }
-    
     @media (max-width: 992px) {
         .photo-item {
             width: 48%; /* 平板端每行2张 */
@@ -57,7 +50,6 @@ author_profile: true
             width: 48%;
         }
     }
-    
     @media (max-width: 600px) {
         .photo-item {
             width: 100%; /* 手机端每行1张 */
@@ -69,8 +61,11 @@ author_profile: true
         }
     }
 </style>
+
+ <h3 class="section-title">团队合影</h3>
+
+<!------------------------------------------------------------------ 第一个模块 ------------------------------------------------------------------>
 <div class="photo-section">
-    <h3 class="section-title">团队合影</h3>
     <h2 class="bordered-date">2025年教师节</h2>
     <div class="photo-row">
         <div class="photo-item">< img src="/images/ZhangLab-Photo/教师节1.jpg" loading="lazy"></div>
@@ -78,15 +73,17 @@ author_profile: true
         <div class="photo-item">< img src="/images/ZhangLab-Photo/教师节3.jpg" loading="lazy"></div>
     </div>
     
-    <!-- 这里添加了一个空行 -->
-    <br>
-    
     <h2 class="bordered-date">2025年8月实验室合影</h2>
     <div class="photo-row">
         <div class="photo-item">< img src="/images/ZhangLab-Photo/20250729-合照3.jpg" loading="lazy"></div>
         <div class="photo-item">< img src="/images/ZhangLab-Photo/20250729-合照2.jpg" loading="lazy"></div>
     </div>
+
+    /* 继续往下添加 */
+    
 </div>
+<!------------------------------------------------------------------ 第一个模块 ------------------------------------------------------------------>
+
 
 <div class="photo-section">
     <h3 class="section-title">实验室日常</h3>
@@ -99,6 +96,8 @@ author_profile: true
         </div>
     </div>
 </div>
+
+
 
 <style>
     .section-title {
@@ -133,10 +132,21 @@ author_profile: true
     }
 </style>
 
+
+
 <div class="photo-section">
     <h3>学术交流</h3>
     <div class="photo-row">
-        <div class="photo-item"><img src="/images/ZhangLab-Photo/" loading="lazy"></div>
-        <!-- 可以继续添加更多图片 -->
+        <div class="photo-item">
+            <img src="/images/ZhangLab-Photo/XXX.jpg" loading="lazy"></div>
+            <img src="/images/ZhangLab-Photo/XXX.jpg" loading="lazy"></div>
+            <img src="/images/ZhangLab-Photo/XXX.jpg" loading="lazy"></div>
+            <!-- 可以继续添加更多图片 -->
     </div>
 </div>
+
+
+
+
+
+
