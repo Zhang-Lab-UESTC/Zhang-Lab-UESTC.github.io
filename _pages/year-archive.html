@@ -10,6 +10,7 @@ author_profile: true
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片拼贴效果</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -21,72 +22,128 @@ author_profile: true
             font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #ffffff;
+            background-color: #f8f9fa;
             padding: 20px;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 50px 0 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #1a6bc4;
-            color: #0d4a8a;
-            position: relative;
-        }
-        .section-title i {
-            margin-right: 12px;
-            color: #1a6bc4;
-        }
-        .photo-section {
-            margin-bottom: 40px;
-        }
-        .photo-caption-top {
-            text-align: center;
-            margin: 0 auto 25px;
-            color: #555;
-            font-size: 1.3rem;
-            font-weight: 600;
-            padding: 8px 20px;
-            border: 1px solid #e0e0e0;
-            border-radius: 30px;
-            display: inline-block;
-            background-color: #f9f9f9;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .photo-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 30px;
-            justify-content: center;
-        }
-        .photo-item {
-            flex: 0 0 calc(33.333% - 20px); /* 固定宽度，每行三张 */
-            min-width: 280px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        .container {
             background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 30px 0;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 20px 0 40px;
+            font-size: 2.5rem;
+        }
+        .description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        /* 拼贴网格样式 */
+        .collage-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 200px);
+            gap: 12px;
+            grid-template-areas:
+                "a a b c"
+                "a a d e"
+                "f g h i";
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+        .collage-item {
+            border-radius: 8px;
+            overflow: hidden;
             position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background: #1a6bc4;
         }
-        .photo-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        .collage-item:hover {
+            transform: scale(0.98);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
-        .photo-item img {
+        .collage-item img {
             width: 100%;
-            height: auto; /* 保持原始宽高比 */
+            height: 100%;
+            object-fit: cover;
             display: block;
             transition: transform 0.5s ease;
-            object-fit: contain; /* 不截取图片 */
-            background-color: white; /* 纯白背景 */
         }
-        .photo-item:hover img {
+        .collage-item:hover img {
             transform: scale(1.05);
+        }
+        /* 网格区域分配 */
+        .item1 { grid-area: a; }
+        .item2 { grid-area: b; }
+        .item3 { grid-area: c; }
+        .item4 { grid-area: d; }
+        .item5 { grid-area: e; }
+        .item6 { grid-area: f; }
+        .item7 { grid-area: g; }
+        .item8 { grid-area: h; }
+        .item9 { grid-area: i; }
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .collage-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 150px);
+                grid-template-areas:
+                    "a a"
+                    "a a"
+                    "b c"
+                    "d e"
+                    "f g"
+                    "h i";
+            }
+            h1 { font-size: 2rem; }
+            .description { font-size: 1rem; }
+        }
+        /* 代码解释部分 */
+        .explanation {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: linear-gradient(135deg, #f6f9fc 0%, #eef2f7 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #1a6bc4;
+        }
+        .explanation h2 {
+            color: #1a6bc4;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .explanation h2 i {
+            margin-right: 10px;
+        }
+        .code-block {
+            background: #2d3e50;
+            color: #e1e6ec;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        .code-keyword {
+            color: #ff79c6;
+        }
+        .code-comment {
+            color: #6272a4;
+        }
+        .code-selector {
+            color: #50fa7b;
         }
         footer {
             text-align: center;
@@ -95,19 +152,6 @@ author_profile: true
             color: #666;
             font-size: 0.9rem;
             border-top: 1px solid #e0e0e0;
-        }
-        @media (max-width: 992px) {
-            .photo-item {
-                flex: 0 0 calc(50% - 20px); /* 平板端每行两张 */
-            }
-        }
-        @media (max-width: 600px) {
-            .photo-item {
-                flex: 0 0 100%; /* 手机端每行一张 */
-            }
-            .section-title {
-                font-size: 1.7rem;
-            }
         }
     </style>
 </head>
