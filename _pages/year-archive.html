@@ -55,31 +55,29 @@ author_profile: true
             background-color: #f9f9f9;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        
-        /* 网格布局 - 核心改进 */
+        /* 使用Grid布局替代Flexbox */
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr); /* 创建两列 */
+            gap: 20px; /* 统一设置行列间距 */
             margin-bottom: 30px;
         }
         .photo-item {
+            transition: all 0.3s ease;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             background: white;
-            transition: all 0.3s ease;
-            aspect-ratio: 4/3; /* 保持一致的宽高比 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
+            /* 设置宽高比 */
+            aspect-ratio: 4/3;
         }
         .photo-item img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 填充容器，可能裁剪部分边缘 */
             display: block;
             transition: transform 0.5s ease;
+            object-fit: cover; /* 图片覆盖容器，保持比例 */
         }
         .photo-item:hover {
             transform: translateY(-8px);
@@ -88,12 +86,6 @@ author_profile: true
         .photo-item:hover img {
             transform: scale(1.05);
         }
-        
-        /* 特殊的大图样式 */
-        .photo-item.featured {
-            grid-column: span 2;
-        }
-        
         footer {
             text-align: center;
             margin-top: 60px;
@@ -102,20 +94,10 @@ author_profile: true
             font-size: 0.9rem;
             border-top: 1px solid #e0e0e0;
         }
-        
-        @media (max-width: 992px) {
-            .photo-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
-        @media (max-width: 768px) {
-            .photo-item.featured {
-                grid-column: span 1;
-            }
-        }
+        /* 响应式设计 */
         @media (max-width: 600px) {
             .photo-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* 手机端单列显示 */
             }
             .section-title {
                 font-size: 1.7rem;
@@ -130,14 +112,14 @@ author_profile: true
 <div class="photo-section">
     
     <div class="photo-caption-top">2025年教师节</div>
-    <div class="photo-row">
+    <div class="photo-grid">
         <div class="photo-item"><img src="/images/ZhangLab-Photo/教师节1.jpg" loading="lazy"></div>
         <div class="photo-item"><img src="/images/ZhangLab-Photo/教师节2.jpg" loading="lazy"></div>
         <div class="photo-item"><img src="/images/ZhangLab-Photo/教师节3.jpg" loading="lazy"></div>
     </div>
     
     <div class="photo-caption-top">2025年8月实验室合影</div>
-    <div class="photo-row">
+    <div class="photo-grid">
         <div class="photo-item"><img src="/images/ZhangLab-Photo/20250729-合照3.jpg" loading="lazy"></div>
         <div class="photo-item"><img src="/images/ZhangLab-Photo/20250729-合照2.jpg" loading="lazy"></div>
     </div>
@@ -152,7 +134,7 @@ author_profile: true
 <div class="photo-section">
     
     <div class="photo-caption-top">羽毛球锻炼</div>
-    <div class="photo-row">
+    <div class="photo-grid">
         <div class="photo-item"><img src="/images/ZhangLab-Photo/羽毛球1.jpg" loading="lazy"></div>
         <!----继续添加---->
     </div>
@@ -167,7 +149,7 @@ author_profile: true
 <div class="photo-section">
     
     <div class="photo-caption-top">学术会议</div>
-    <div class="photo-row">
+    <div class="photo-grid">
         <div class="photo-item"><img src="/images/ZhangLab-Photo/xx.jpg" loading="lazy"></div>
         <!----继续添加---->
     </div>
