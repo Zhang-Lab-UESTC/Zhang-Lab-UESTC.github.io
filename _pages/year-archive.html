@@ -58,37 +58,36 @@ author_profile: true
         .photo-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            /* 移除默认间隙 */
+            gap: 0; 
             margin-bottom: 30px;
-            justify-content: center;
+            justify-content: space-between; /* 或使用 flex-start 并配合计算宽度 */
         }
         .photo-item {
-            flex: 0 0 calc(50% - 20px); /* 每行两张，考虑间隙 */
-            min-width: 280px;
-            margin-bottom: 15px;
+            /* 计算宽度，考虑可能存在的 margin */
+            flex: 0 0 calc(50% - 0px); /* 每行两张，无间隙 */
+            margin-bottom: 0; /* 移除底部间隙，行间距由 .photo-row 的 margin-bottom 控制 */
             transition: all 0.3s ease;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             background: white;
             position: relative;
-            height: 300px; /* 设置一个统一的基础高度或最小高度 */
+            /* 确保容器高度由内容决定 */
             display: flex;
             align-items: center; /* 垂直居中 */
             justify-content: center; /* 水平居中 */
         }
-        .photo-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        }
         .photo-item img {
-            width: auto; /* 改为自动宽度以适应容器 */
-            max-width: 100%; /* 确保图片不超出容器 */
-            height: auto; /* 保持原始宽高比 */
-            max-height: 100%; /* 限制最大高度为容器高度 */
+            width: 100%; /* 使图片宽度填充容器 */
+            height: auto; /* 高度自动，保持比例 */
             display: block;
             transition: transform 0.5s ease;
             object-fit: contain; /* 包含整个图片，保持比例 */
+        }
+        .photo-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
         .photo-item:hover img {
             transform: scale(1.05);
@@ -103,7 +102,7 @@ author_profile: true
         }
         @media (max-width: 992px) {
             .photo-item {
-                flex: 0 0 calc(50% - 20px); /* 平板端每行两张 */
+                flex: 0 0 calc(50% - 0px); /* 平板端保持每行两张 */
             }
         }
         @media (max-width: 600px) {
